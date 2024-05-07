@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Final Assignment Js</h1>
+    <script>
+      let GuessCount = 0;
+      let randomNumber = Math.floor(Math.random() * 100 + 1);
+      console.log(GuessCount+"outer");
+
+      function StartGame() {
+        console.log(GuessCount);
+        if (GuessCount === 3) {
+          let playAgain=prompt("Do you want to play again yes/no")
+          if(playAgain=="yes"){
+            GuessCount = 0;
+            randomNumber = Math.floor(Math.random() * 100 + 1);
+            StartGame();
+          }else if(playAgain=="no") {
+            alert("Thank you For Playing the game");
+           
+          }
+        }
+
+        let userInput = prompt("Enter the Number To Guess From 1 to 100");
+        let UserGuess = parseInt(userInput);
+
+        if (NotEmpty(userInput)) {
+          alert("Please Enter the Number");
+          StartGame();
+        } else if (isString(UserGuess)) {
+          alert("Please Enter the Number, Not a String");
+          StartGame();
+        } else {
+          GuessTheNumber(UserGuess);
+        }
+
+        function NotEmpty(UserGuess) {
+          return UserGuess === "";
+        }
+
+        function isString(UserGuess) {
+          return isNaN(UserGuess);
+        }
+
+        function GuessTheNumber(Guess) {
+          while (GuessCount <= 3) {
+            if (Guess === randomNumber) {
+              alert("You Won");
+              GuessCount = 3;
+            } else {
+              alert("Incorrect, Please try again");
+              GuessCount++;
+              StartGame();
+            }
+          }
+
+          // console.log(randomNumber);
+        }
+      }
+      StartGame();
+    </script>
+  </body>
+</html>
