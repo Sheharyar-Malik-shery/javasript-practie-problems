@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3 js</title>
+</head>
+<body>
+    <h1>CalCulator </h1>
+</body>
+<script>
+    let firstoperand = prompt( "Enter the first operand" )
+    console.log(typeof firstoperand);
+    let operator = prompt("Enter the Operator")
+    let secoperand = prompt("Enter the second operand")
+    
+        switch(operator){
+            case '+':
+             let result = parseInt(firstoperand) + parseInt(secoperand)
+             alert(result)
+             break;
+             case '-':
+             let result1 = parseInt(firstoperand) - parseInt(secoperand)
+             alert(result1)
+             break;
+             case '*':
+             let result2 = parseInt(firstoperand) * parseInt(secoperand)
+             alert(result2)
+             break;
+             case '/':
+             let result3 = parseInt(firstoperand) / parseInt(secoperand)
+             alert(result3)
+             break;
+             case '%':
+             let result4 = parseInt(firstoperand) % parseInt(secoperand)
+             alert(result4)
+             break;
+             default:
+             alert("Please Enter Valid Values")
+        }
+    
+    console.log(`${firstoperand}${operator}${secoperand}`)
+
+    
+</script>
+
+</html>
