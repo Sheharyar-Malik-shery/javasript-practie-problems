@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment no 4</title>
+  </head>
+  <body>
+    <h1>Assignment No 4</h1>
+  </body>
+  <script>
+    /*Q. Initialize an array with color names. Display the array elements in
+    your browser.*/
+
+    let colors = ["Red", "Green", "Yallow", "Black"];
+    alert(`Your initialize array is\n ${colors}`);
+
+    /*A. Ask the user what color he/she wants to add to the beginning &
+    add that color to the beginning of the array. Display the updated
+    array in your browser.*/
+
+    let addcolor = prompt(
+      `Enter the color You Want to add In the Bigning of Given Colors\n ${colors}`
+    );
+    colors.unshift(addcolor);
+    alert("Your color successfully added at Start\n " + colors);
+    console.log(colors);
+
+    /*B. Ask the user what color he/she wants to add to the end & add
+    that color to the end of the array. Display the updated array in
+    your browser.*/
+
+    let addcolorend = prompt(
+      `Enter the color You Want to add In the End of Given Colors\n ${colors}`
+    );
+    colors.push(addcolorend);
+    alert("Your color successfully added at end\n " + colors);
+    console.log(colors);
+
+    /*C. Add two more colors to the beginning of the array. Display the
+    updated array in your browser.*/
+
+    colors.unshift("Purple");
+    colors.unshift("White");
+    alert("Your colors successfully added at start\n " + colors);
+    console.log(colors);
+
+    /*D. Delete the first color in the array. Display the updated array in
+     your browser.
+                 */
+    colors.shift();
+    alert("Your colors successfully Delete from start\n " + colors);
+    console.log(colors);
+
+    /*E. Delete the last color in the array. Display the updated array in
+    your browser.*/
+
+    colors.pop();
+    alert("Your colors successfully Delete from End\n " + colors);
+    console.log(colors);
+
+    /*F. Ask the user at which index he/she wants to add a color & color
+    name. Then add the color to desired position/index. Display the
+    updated array in your browser.*/
+
+    let index = prompt(
+      `Enter the Index Where You want to add Color , Array Length is ${colors.length}`
+    );
+    if (parseInt(index) <= colors.length + 1 && parseInt(index) >= 0) {
+      let data = prompt("Enter the Color");
+      colors.splice(`${parseInt(index)}`, 0, `${data}`);
+      alert(`Your color Successfully Added On index ${index}\n` + colors);
+    } else {
+      alert(
+        `Your index is greater/Less then Array Length next index\n Length is ${colors.length}`
+      );
+    }
+
+    /*G. Ask the user at which index he/she wants to delete color(s) &
+   how many colors he/she wants to delete. Then remove the
+   same number of color(s) from user-defined position/index. .
+   Display the updated array in your browser.*/
+
+    let deletindex = prompt(
+      `Enter the Index Where You want to delete Color\n Length are:${colors.length}`
+    );
+    if (deletindex < colors.length && deletindex >= 0) {
+      let deleteitems = prompt("Enter the Numbers of Color You want to Delet");
+      if (deleteitems < colors.length && deleteitems >= 0) {
+        colors.splice(`${parseInt(deletindex)}`, `${parseInt(deleteitems)}`);
+        alert(
+          `Your color Successfully Deleted from index ${deletindex} to Number of Colors ${deleteitems}\n ` +
+            colors
+        );
+      } else {
+        alert("Please Enetr the valid Numbers");
+      }
+    } else {
+      alert("Please Enetr the valid index");
+    }
+  </script>
+</html>
