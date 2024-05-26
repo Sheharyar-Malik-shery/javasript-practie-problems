@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>hay</h1>
+    <script>
+        let A = ["cake", "apple pie", "cookie", "chips", "patties"];
+alert("Available Items are\n" + A);
+
+let userInput = prompt("Enter Your Required Item").trim(); // Trim leading and trailing whitespaces
+console.log(userInput);
+
+function search(array, userInput) {
+  // Trim leading and trailing whitespaces from each array item
+  let trimmedArray = array.map(item => item.trim());
+
+  if (trimmedArray.includes(userInput)) {
+    alert("Your Required Item is Available\n" + userInput);
+  } else {
+    alert("Your Required Item is Not Available");
+  }
+}
+
+search(A, userInput);
+
+    </script>
+</body>
+</html>
